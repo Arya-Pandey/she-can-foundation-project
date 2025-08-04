@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+  <div class="dashboard-container">
+    <img src="logo.jpg" alt="logo" class="logo">
+    <h2>Welcome To She Can Foundation, <span id="user-name"></span>!</h2>
+    <div id="user-info"></div>
+  </div>
+
+  <script>
+    const username = localStorage.getItem("username");
+    document.getElementById("user-name").textContent = username || "Guest";
+
+    fetch("data.json")
+      .then(response => response.json())
+      .then(data => {
+        const user = data.users.find(u => u.name.toLowerCase() === username.toLowerCase());
+        const infoDiv = document.getElementById("user-info");
+
+        if (user) {
+          infoDiv.innerHTML = `
+            <p><strong>Referral Code:</strong> ${user.referralCode}</p>
+            <p><strong>Total Donations:</strong> ₹${user.donations}</p>
+            <p><strong>Completed Tasks:</strong> ${user.tasks}</p>
+            <p><strong>Email:</strong> ${user.email}</p>
+          `;
+        } else {
+          infoDiv.innerHTML = `<p style="color:red;">Error: No data found for "${username}"</p>`;
+        }
+      })
+      .catch(error => {
+        document.getElementById("user-info").innerHTML = "<p>Error loading data.</p>";
+        console.error(error);
+      });
+  </script>
+</body>
+</html>

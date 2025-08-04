@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "name": "Arya Pandey",
+      "referralCode": "ARYA123",
+      "donations": 1500,
+      "tasks": 12,
+      "email": "arya@example.com"
+    },
+    {
+      "name": "Neha Sharma",
+      "referralCode": "NEHA456",
+      "donations": 900,
+      "tasks": 9,
+      "email": "neha@example.com"
+    },
+    {
+      "name": "Ravi Kumar",
+      "referralCode": "RAVI789",
+      "donations": 2000,
+      "tasks": 15,
+      "email": "ravi@example.com"
+    },
+    {
+      "name": "Priya Verma",
+      "referralCode": "PRIYA321",
+      "donations": 1250,
+      "tasks": 11,
+      "email": "priya@example.com"
+    },
+    {
+      "name": "Aman Singh",
+      "referralCode": "AMAN654",
+      "donations": 1100,
+      "tasks": 8,
+      "email": "aman@example.com"
+    }
+  ]
+}
